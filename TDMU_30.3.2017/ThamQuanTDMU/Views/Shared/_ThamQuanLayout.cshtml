@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>@Page.Title</title>
+        @RenderSection("head", required: false)
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="~/Content/assets/css/pannellum.css" />
+        <script type="text/javascript" src="~/Content/assets/js/pannellum.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="~/Content/assets/js/jquery-3.1.1.min.js"></script>
+        <link href="~/Content/assets/css/jquery.mobile-1.4.5.css" rel="stylesheet" />
+        <script src="~/Content/assets/js/jquery.mobile-1.4.5.js"></script>
+        <!-- Bootstrap core CSS -->
+        <link href="~/Content/assets/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="~/Content/assets/css/style.css" rel="stylesheet">
+        <link href="~/Content/assets/css/font-awesome.min.css" rel="stylesheet">
+        <style>
+            *{
+                box-sizing:border-box;
+            }
+                    #panorama {
+        max-width:1380px;
+        height: 670px;
+    }
+                    div#divHuongDan{
+                        border-radius: 20px;
+                        background-color: blue;
+                        position:absolute;
+                        top:17%;
+                        bottom:17%;
+                        left:30%;
+                        right:30%;
+                        width: 40%; 
+                        height:auto;
+                        opacity: 0.7;
+                        color: white;
+                        z-index: 999;
+                    }
+                     div#divHuongDan p{
+                         color:white;
+                         font-size:19px;
+                     }
+                     div#divPhongTo, div#divThuNho, div#divMap, div#divNhac, div#divFullScreen, div#divHome, div#divVR{
+                         position:absolute;
+                         z-index: 1;
+                     }
+                      div#divVR{
+                          bottom:1px;
+                          left:48%;
+                      }
+                      div#divThuNho{
+                          bottom:1px;
+                          left:43%;
+                      }
+                     div#divPhongTo{
+                         bottom:1px;
+                         left:38%;
+                     }
+                     div#divMap{
+                         bottom:1px;
+                         left:33%;
+                     }
+                      div#divNhac{
+                          bottom:1px;
+                          left:23%;
+                      }
+                     div#divFullScreen{
+                        bottom:2px;
+                        left:28%;
+                     }
+                    div#divHome{
+                       bottom:1px;
+                       left:18%;
+                    }
+              @@media only screen and (max-width: 768px) {
+   #panorama{
+        max-width:500px;
+        height: 575px;
+   }
+   div#divHuongDan{
+       top:1%;
+        bottom:1%;
+        left:1%;
+        right:1%;
+         width: 70%; 
+        height:auto;
+       opacity: 1;
+       
+       width:100%;
+       height:auto;
+       color:white;
+   }
+    div#divHuongDan p{
+font-size:13px;
+    }
+   div#divThuNho, div#divPhongTo{
+       display:none;
+   }
+    div#divMap, div#divFullScreen, div#divNhac, div#divHome, div#divVR{
+        left:0;
+
+    }
+           #imgViTri, div#divMap{
+               left:0;
+              bottom:40px;
+
+   } 
+       #imgFullScreen, div#divFullScreen {
+            left:0;
+              bottom:90px;
+   }   
+         #imgNhac,  div#divNhac{
+             left:0;
+              bottom:140px;
+   }
+     
+         #imgtrangchu, div#divHome{
+             left:0;
+              bottom:190px;
+   }
+          #imgVR, div#divVR{
+               left:0;
+              bottom:240px;
+
+   } 
+   div#divTienIch{
+      
+   }
+    /**/
+           }
+    #test{
+        position: absolute;
+        visibility: visible;
+        background-color: blue;
+        z-index: 999;
+    }
+    #test:hover{
+
+    }
+    #map_canvas {
+           width: 400px;
+           height:300px;
+           border:solid 1px #ccc;
+           position: absolute;
+           bottom: 15%;
+           left: 10%;
+           z-index: 1;
+       }
+ul#lstMenu li{
+    text-decoration: none;
+    list-style-type: none;
+    padding: 10px;
+    text-align: left;
+    color:white;
+}
+ul#lstMenu li:hover{
+    background-color: white;
+    opacity: 1;
+}
+ul#lstMenu li a:hover{
+    color:darkblue;
+    opacity: 1;
+    font-weight: bold;
+}
+.reel { cursor: url(assets/img/openhand.cur), auto;}
+
+img#imgTienIch{
+  opacity: 0.5;
+}
+img#imgTienIch:hover{
+  opacity: 1;
+}
+        </style> 
+    </head>
+    <body>
+        @RenderBody()
+    </body>
+</html>

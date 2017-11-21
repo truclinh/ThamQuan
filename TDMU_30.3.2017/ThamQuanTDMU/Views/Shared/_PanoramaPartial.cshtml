@@ -1,0 +1,404 @@
+﻿//------------Dãy phòng khoa
+            "pan_dayphongkhoa": {
+                "title": "Dãy phòng khoa",
+                "hfov": 110,
+                "pitch": -3,
+                "yaw": 117,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/dayphongkhoa.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": -2.1,
+                        "yaw": -50,
+                        "type": "scene",
+                        "text": "Bãi xe hơi",
+                        "sceneId": "pan_baixehoi"
+                    }
+                ]
+            },
+            //Bãi xe hơi
+            "pan_baixehoi": {
+                "title": "Bãi xe hơi",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/baixehoi.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 7,
+                        "yaw": 120,
+                        "type": "scene",
+                        "text": "Dãy phòng khoa",
+                        "sceneId": "pan_dayphongkhoa",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 3,
+                        "yaw": 197,
+                        "type": "scene",
+                        "text": "Bãi giữ xe máy",
+                        "sceneId": "pan_baixemay",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 6,
+                        "yaw": 17,
+                        "type": "scene",
+                        "text": "Vườn học tập (Cổng 2)",
+                        "sceneId": "pan_vuonhoctapcong2",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            },
+            //Bãi xe máy
+            "pan_baixemay": {
+                "title": "Bãi giữ xe máy",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/baixemay.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 5,
+                        "yaw": -125,
+                        "type": "scene",
+                        "text": "Bãi xe hơi",
+                        "sceneId": "pan_baixehoi",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 5,
+                        "yaw": -117,
+                        "type": "scene",
+                        "text": "Dãy phòng khoa",
+                        "sceneId": "pan_dayphongkhoa",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            },
+            //-------------------Vườn học tập (Cổng 2)
+            "pan_vuonhoctapcong2": {
+           "title": "Vườn học tập (Cổng 2)",
+           "hfov": 110,
+           "yaw": 5,
+           "type": "equirectangular",
+           "panorama": "../Content/assets/img/vuonhoctapcong2.jpg",
+           "hotSpots": [
+               {
+                   "pitch": 5,
+                   "yaw": 77,
+                   "type": "scene",
+                   "text": "Bãi xe hơi",
+                   "sceneId": "pan_baixehoi",
+                   "targetYaw": -23,
+                   "targetPitch": 2
+               },
+               {
+                   "pitch": 5,
+                   "yaw": -100,
+                   "type": "scene",
+                   "text": "Cổng 1",
+                   "sceneId": "pan_cong1",
+                   "targetYaw": -23,
+                   "targetPitch": 2
+               },
+               {
+                   "pitch": 5,
+                   "yaw": 165,
+                   "type": "scene",
+                   "text": "Sân cờ",
+                   "sceneId": "pan_sanco1",
+                   "targetYaw": -23,
+                   "targetPitch": 2
+               }
+           ]
+            },
+            //---------------- Cổng 1
+            "pan_cong1": {
+                "title": "Cổng 1",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/cong1.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 4,
+                        "yaw":22 ,
+                        "type": "scene",
+                        "text": "Vườn học tập (Cổng 2)",
+                        "sceneId": "pan_vuonhoctapcong2",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 5,
+                        "yaw": 126,
+                        "type": "scene",
+                        "text": "Sân cờ",
+                        "sceneId": "pan_sanco1",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 24,
+                        "yaw": 175,
+                        "type": "info",
+                        "text": "Dãy A1 - Phòng hành chính",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 30,
+                        "yaw": 90,
+                        "type": "info",
+                        "text": "Dãy B2",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 10,
+                        "yaw": -10,
+                        "type": "info",
+                        "text": "Dãy C1",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 14,
+                        "yaw": 217,
+                        "type": "info",
+                        "text": "Cổng 1",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+
+                ]
+            },
+            // Sân cờ 1
+            "pan_sanco1": {
+                "title": "Sân cờ",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/sanco1.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 4,
+                        "yaw": -25,
+                        "type": "scene",
+                        "text": "Vườn học tập (Cổng 2)",
+                        "sceneId": "pan_vuonhoctapcong2",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 4,
+                        "yaw": 268,
+                        "type": "scene",
+                        "text": "Cổng 1",
+                        "sceneId": "pan_cong1",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                        {
+                        "pitch": 4,
+                        "yaw": 255,
+                        "type": "scene",
+                        "text": "Vườn học tập",
+                        "sceneId": "pan_vuonhoctap1",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 3,
+                        "yaw": 100,
+                        "type": "scene",
+                        "text": "Sân cờ",
+                        "sceneId": "pan_sanco2",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                     {
+                         "pitch": 5,
+                         "yaw": 110,
+                         "type": "scene",
+                         "text": "Vườn học tập",
+                         "sceneId": "pan_vuonhoctap2",
+                         "targetYaw": -23,
+                         "targetPitch": 2
+                     },
+                     {
+                         "pitch": 5,
+                         "yaw": 150,
+                         "type": "scene",
+                         "text": "Thư viện",
+                         "sceneId": "pan_thuvien",
+                         "targetYaw": -23,
+                         "targetPitch": 2
+                     }
+                ]
+            },
+            // Sân cờ 2
+            "pan_sanco2": {
+                "title": "Sân cờ",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/sanco2.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 4,
+                        "yaw": 77,
+                        "type": "scene",
+                        "text": "Sân cờ",
+                        "sceneId": "pan_sanco1",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 5,
+                        "yaw": -100,
+                        "type": "scene",
+                        "text": "Dãy phòng máy",
+                        "sceneId": "pan_dayphongmay",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                     {
+                         "pitch": 5,
+                         "yaw": 60,
+                         "type": "scene",
+                         "text": "Thư viện",
+                         "sceneId": "pan_thuvien",
+                         "targetYaw": -23,
+                         "targetPitch": 2
+                     }
+                ]
+            },
+            // Thư viện
+            "pan_thuvien": {
+                "title": "Thư viện",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/thuvien.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 2,
+                        "yaw": 250,
+                        "type": "scene",
+                        "text": "Sân cờ",
+                        "sceneId": "pan_sanco1",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            },
+            // Dãy phòng máy
+            "pan_dayphongmay": {
+                "title": "Dãy phòng máy",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/dayphongmay.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 5,
+                        "yaw": 130,
+                        "type": "scene",
+                        "text": "Phòng máy",
+                        "sceneId": "pan_phongmay",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 5,
+                        "yaw": 25,
+                        "type": "scene",
+                        "text": "Sân cờ",
+                        "sceneId": "pan_sanco2",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            },
+            // Phòng máy
+            "pan_phongmay": {
+                "title":"Phòng máy",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/phongmay.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 5,
+                        "yaw": 17,
+                        "type": "scene",
+                        "text": "Dãy phòng máy",
+                        "sceneId": "pan_dayphongmay",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            },
+            // Vườn học tập 1
+            "pan_vuonhoctap1": {
+                "title": "Vườn học tập",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/vuonhoctap1.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 5,
+                        "yaw": 290,
+                        "type": "scene",
+                        "text": "Vườn học tập",
+                        "sceneId": "pan_vuonhoctap2",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 5,
+                        "yaw": 130,
+                        "type": "scene",
+                        "text": "Sân cờ",
+                        "sceneId": "pan_sanco1",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            },
+            // Vườn học tập 2
+            "pan_vuonhoctap2": {
+                "title": "Vườn học tập",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "../Content/assets/img/vuonhoctap2.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 5,
+                        "yaw": 140,
+                        "type": "scene",
+                        "text": "Vườn học tập",
+                        "sceneId": "pan_vuonhoctap1",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 2,
+                        "yaw": 188,
+                        "type": "scene",
+                        "text": "Sân cờ",
+                        "sceneId": "pan_sanco2",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            }

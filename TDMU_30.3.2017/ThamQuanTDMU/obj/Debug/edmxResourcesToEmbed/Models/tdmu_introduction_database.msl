@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TDMU_INTRODUCTIONModelStoreContainer" CdmEntityContainer="TDMU_INTRODUCTIONEntities">
+    <EntitySetMapping Name="ADMINs">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.ADMIN">
+        <MappingFragment StoreEntitySet="ADMIN">
+          <ScalarProperty Name="AD_Password" ColumnName="AD_Password" />
+          <ScalarProperty Name="AD_Username" ColumnName="AD_Username" />
+          <ScalarProperty Name="AD_Birth" ColumnName="AD_Birth" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="AD_Id" ColumnName="AD_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTMENTs">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.DEPARTMENT">
+        <MappingFragment StoreEntitySet="DEPARTMENT">
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FOOTERs">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.FOOTER">
+        <MappingFragment StoreEntitySet="FOOTER">
+          <ScalarProperty Name="FooterType_ID" ColumnName="FooterType_ID" />
+          <ScalarProperty Name="Footer_Content" ColumnName="Footer_Content" />
+          <ScalarProperty Name="Footer_Images" ColumnName="Footer_Images" />
+          <ScalarProperty Name="Footer_Link" ColumnName="Footer_Link" />
+          <ScalarProperty Name="Footer_Name" ColumnName="Footer_Name" />
+          <ScalarProperty Name="Footer_Id" ColumnName="Footer_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FOOTER_TYPE">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.FOOTER_TYPE">
+        <MappingFragment StoreEntitySet="FOOTER_TYPE">
+          <ScalarProperty Name="Footer_Type1" ColumnName="Footer_Type" />
+          <ScalarProperty Name="FooterType_ID" ColumnName="FooterType_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENUs">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.MENU">
+        <MappingFragment StoreEntitySet="MENU">
+          <ScalarProperty Name="Menu_Paths" ColumnName="Menu_Paths" />
+          <ScalarProperty Name="Menu_Note" ColumnName="Menu_Note" />
+          <ScalarProperty Name="Menu_Active" ColumnName="Menu_Active" />
+          <ScalarProperty Name="Menu_Link" ColumnName="Menu_Link" />
+          <ScalarProperty Name="Menu_color" ColumnName="Menu_color" />
+          <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENU_CONTENT">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.MENU_CONTENT">
+        <MappingFragment StoreEntitySet="MENU_CONTENT">
+          <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="MC_Paths" ColumnName="MC_Paths" />
+          <ScalarProperty Name="MC_Note" ColumnName="MC_Note" />
+          <ScalarProperty Name="MC_Content" ColumnName="MC_Content" />
+          <ScalarProperty Name="MC_Sources" ColumnName="MC_Sources" />
+          <ScalarProperty Name="MC_Description" ColumnName="MC_Description" />
+          <ScalarProperty Name="MC_Position" ColumnName="MC_Position" />
+          <ScalarProperty Name="MC_Images" ColumnName="MC_Images" />
+          <ScalarProperty Name="MC_Title" ColumnName="MC_Title" />
+          <ScalarProperty Name="MC_Id" ColumnName="MC_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STUDY_ACTIVITY">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.STUDY_ACTIVITY">
+        <MappingFragment StoreEntitySet="STUDY_ACTIVITY">
+          <ScalarProperty Name="SA_Type" ColumnName="SA_Type" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="SA_Khoa" ColumnName="SA_Khoa" />
+          <ScalarProperty Name="SA_Video" ColumnName="SA_Video" />
+          <ScalarProperty Name="SA_Image" ColumnName="SA_Image" />
+          <ScalarProperty Name="SA_Year" ColumnName="SA_Year" />
+          <ScalarProperty Name="SA_Content" ColumnName="SA_Content" />
+          <ScalarProperty Name="SA_Title" ColumnName="SA_Title" />
+          <ScalarProperty Name="SA_Id" ColumnName="SA_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STUDY_ENVIRONMENT">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.STUDY_ENVIRONMENT">
+        <MappingFragment StoreEntitySet="STUDY_ENVIRONMENT">
+          <ScalarProperty Name="SE_Type" ColumnName="SE_Type" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="SE_Note" ColumnName="SE_Note" />
+          <ScalarProperty Name="SE_Image" ColumnName="SE_Image" />
+          <ScalarProperty Name="SE_Content" ColumnName="SE_Content" />
+          <ScalarProperty Name="SE_Title" ColumnName="SE_Title" />
+          <ScalarProperty Name="SE_Id" ColumnName="SE_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUB_MENU_CONTENT">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.SUB_MENU_CONTENT">
+        <MappingFragment StoreEntitySet="SUB_MENU_CONTENT">
+          <ScalarProperty Name="MC_Id" ColumnName="MC_Id" />
+          <ScalarProperty Name="SMC_Note" ColumnName="SMC_Note" />
+          <ScalarProperty Name="SMC_Description" ColumnName="SMC_Description" />
+          <ScalarProperty Name="SMC_Position" ColumnName="SMC_Position" />
+          <ScalarProperty Name="SMC_Images" ColumnName="SMC_Images" />
+          <ScalarProperty Name="SMC_Id" ColumnName="SMC_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VISIT_IMAGE">
+      <EntityTypeMapping TypeName="TDMU_INTRODUCTIONModel.VISIT_IMAGE">
+        <MappingFragment StoreEntitySet="VISIT_IMAGE">
+          <ScalarProperty Name="lng" ColumnName="lng" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="Img_Link" ColumnName="Img_Link" />
+          <ScalarProperty Name="Img_Title" ColumnName="Img_Title" />
+          <ScalarProperty Name="Img_Src" ColumnName="Img_Src" />
+          <ScalarProperty Name="Img_Id" ColumnName="Img_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,104 @@
+﻿@model ThamQuanTDMU.Models.STUDY_ACTIVITY
+
+@{
+    ViewBag.Title = "Xoá";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    dt, dd {
+        margin-bottom: 10px;
+        color: black;
+    }
+
+    dt {
+        color: #080515;
+        font-weight: normal;
+        color: #03052c;
+    }
+</style>
+
+<h2>XÓA MỘT ĐỀ TÀI</h2>
+<h3>BẠN CÓ MUỐN XÓA ĐỀ TÀI NÀY</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="text-align: left">
+            @Html.DisplayNameFor(model => model.SA_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SA_Id)
+        </dd>
+
+        <dt style="text-align: left">
+            @Html.DisplayNameFor(model => model.SA_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SA_Title)
+        </dd>
+
+        <dt style="text-align: left">
+            @Html.DisplayNameFor(model => model.SA_Content)
+        </dt>
+
+        <dd>
+            @Html.Raw(HttpUtility.HtmlDecode(Model.SA_Content))
+        </dd>
+
+        <dt style="text-align: left">
+            @Html.DisplayNameFor(model => model.SA_Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SA_Year)
+        </dd>
+
+        <dt style="text-align: left">
+            @Html.DisplayNameFor(model => model.SA_Image)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("../Content/assets/NCKH/img/"+ Model.SA_Image)" width="200" height="300">
+        </dd>
+
+        <dt style="text-align: left">
+            @Html.DisplayNameFor(model => model.SA_Khoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SA_Khoa)
+        </dd>
+
+        <dt style="text-align: left">
+            @Html.DisplayNameFor(model => model.SA_Video)
+        </dt>
+
+        <dd>
+            @if (Model.SA_Video == null)
+            {
+
+                @Html.DisplayFor(modelItem => Model.SA_Video)
+
+            }
+            else if (Model.SA_Video != null)
+            {
+
+                <video width="200" height="350" controls="controls">
+                    <source src="~/Content/assets/NCKH/video/@Model.SA_Video" type="video/mp4" />
+                </video>
+
+            }
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "Index")
+        </div>
+    }
+</div>

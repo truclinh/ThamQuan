@@ -1,0 +1,181 @@
+﻿
+@{
+    ViewBag.Title = "Môi trường học tập";
+
+}
+@model List<ThamQuanTDMU.Models.STUDY_ENVIRONMENT>
+ <!--PHÒNG HỌC-->
+<div class="container mtb">
+    <div class="row">
+        <div class="col-lg-4">
+            <h3>PHÒNG HỌC</h3>
+            <p>Một không gian rộng rãi, thoáng đãng cùng với trang thiết bị hiện đại góp phần tạo nên một môi trường lý tưởng nhất cho giảng viên, sinh viên trong công tác dạy và học </p>
+            <hr style="width: 50%">
+            <div style="background-color:#f0c282;padding: 10px">
+                <h4>Một số hình ảnh</h4>
+            </div>
+            <hr style="width: 50%">
+            <div class="col-lg-12">
+                @foreach (var item in Model)
+                {
+                    if (item.SE_Type == 1)       //chạy vòng lặp load dữ liệu
+                    {
+                        <div id="@item.SE_Id" class="col-lg-6 ph">
+                            <img class="img-responsive" src="~/Content/assets/img/tdmu_img/@item.SE_Image" alt="">
+                        </div>
+                      <script>                          //chỉnh js chọn ảnh
+                        $(document).ready(function () {
+                            $('#@item.SE_Id').click(function () {
+                                $('#ph').attr("src", "../Content/assets/img/tdmu_img/@item.SE_Image");
+                            });
+                        }); 
+                    </script>
+                    }
+                }
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+            if (item.SE_Note=="PhongHoc")
+            {
+                 <div class="col-lg-8 piczoom">
+                     <img id="ph" src="~/Content/assets/img/tdmu_img/@item.SE_Image" style="width: 100%;height: 550px;"
+                          class="img-responsive phone-image" alt="">
+                </div>
+            }
+             
+        }
+        
+    </div>
+
+</div>
+<!--END PHÒNG HỌC-->
+
+<!-- *****************************************************************************************************************
+ AGENCY ABOUT
+ ***************************************************************************************************************** -->
+<!--VƯỜN HỌC TẬP-->
+<div class="container mtb">
+    <div class="row">
+    @foreach(var item in Model)
+    {
+        if (item.SE_Note=="VuonHocTap")
+        { 
+            <div class="col-lg-8 piczoom" >
+            <img id="th" src="~/Content/assets/img/tdmu_img/@item.SE_Image" style="width: 100%;height: 550px;"
+                 class="img-responsive phone-image">
+        </div>
+        }
+    }
+        <div class="col-lg-4">
+            <h4>VƯỜN HỌC TẬP</h4>
+            <p>Nhằm tạo một môi trường học tập tốt nhất, giúp sinh viên có một nơi để học nhóm ngoài giờ lên lớp thật hiệu quả. Trường đã xây dựng khu vườn học tập với không gian rộng rãi, thoáng mát bằng các ngôi nhà có mái che cung cấp đầy đủ đèn, quạt, ổ cắm điện với hàng cây xanh rợp bóng xung quanh và những khóm hoa đầy màu sắc.</p>
+            <hr style="width: 50%">
+            <div style="background-color:#f0c282;padding: 10px">
+                <h4>Một số hình ảnh</h4>
+            </div>
+            <hr style="width: 50%">
+
+            <div style="margin-bottom: 2%;" class="col-lg-12">
+               @foreach (var item in Model)
+                {
+                 if (item.SE_Type == 2)
+                    {
+                        <div id="@item.SE_Id" class="col-lg-6 ht">
+                            <img class="img-responsive" src="~/Content/assets/img/tdmu_img/@item.SE_Image" alt="">
+                        </div>
+                      <script>
+                        $(document).ready(function () {
+                            $('#@item.SE_Id').click(function () {
+                                $('#th').attr("src", "../Content/assets/img/tdmu_img/@item.SE_Image");
+                            });
+                        });
+                    </script>
+                    }
+                    
+                }
+            </div>
+        </div>
+    </div><! --/row -->
+</div><! --/container -->
+<!--END VƯỜN HỌC TẬP-->
+
+<!--PHÒNG LAB-->
+<div class="container mtb">
+    <div class="row">
+        <div class="col-lg-4">
+            <h3>PHÒNG LAB</h3>
+            <p>Một không gian rộng rãi, thoáng đãng cùng với trang thiết bị hiện đại góp phần tạo nên một môi trường lý tưởng nhất cho giảng viên, sinh viên trong công tác dạy và học </p>
+            <hr style="width: 50%">
+            <div style="background-color:#f0c282;padding: 10px">
+                <h4>Một số hình ảnh</h4>
+            </div>
+            <hr style="width: 50%">
+            <div class="col-lg-12">
+                @foreach (var item in Model)
+                {
+                    if (item.SE_Type == 3)       //chạy vòng lặp load dữ liệu
+                    {
+                        <div id="@item.SE_Id" class="col-lg-6 pl">
+                            <img class="img-responsive" src="~/Content/assets/img/tdmu_img/@item.SE_Image" alt="">
+                        </div>
+                        <script>
+                          //chỉnh js chọn ảnh
+                        $(document).ready(function () {
+                            $('#@item.SE_Id').click(function () {
+                                $('#pl').attr("src", "../Content/assets/img/tdmu_img/@item.SE_Image");
+                            });
+                        });
+                        </script>
+                    }
+                }
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+            if (item.SE_Note=="PhongLab")
+            {
+                <div class="col-lg-8 piczoom">
+                    <img id="pl" src="~/Content/assets/img/tdmu_img/@item.SE_Image" style="width: 100%;height: 550px;"
+                         class="img-responsive phone-image" alt="">
+                </div>
+            }
+
+        }
+
+    </div>
+
+</div>
+<!--END PHÒNG LAB-->
+
+<!-- *****************************************************************************************************************
+ TEEAM MEMBERS
+ ***************************************************************************************************************** -->
+
+<!-- *****************************************************************************************************************
+ TESTIMONIALS
+ ***************************************************************************************************************** -->
+@Html.Partial("_DoanhNghiepPartial")
+<style type="text/css">
+    div.ph:hover, div.th:hover,div.pl:hover, div.pm:hover {
+        cursor: pointer;
+        opacity: 0.5;
+    }
+    div.ph, div.ht, div.pl, div.pm {
+        border: 2px solid white;
+    }
+    @@media only screen and (max-width:768px){
+        .piczoom{
+            display:none;
+            width:100%;
+            margin-bottom:2%;
+        }
+         div.ph, div.ht, div.pl, div.pm {
+        width:100%;
+        margin-bottom:2%;
+    }
+         div.col-lg-4{
+             width:100%;
+         }
+    }
+</style>

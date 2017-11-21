@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ThamQuanTDMU.Models.MENU_CONTENT>
+
+@{
+    ViewBag.Title = "Quản lý bài đăng";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Quản lý bài đăng</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "ThemMoi")
+</p>
+<div class="table-responsive">
+    <table class="table bangSP">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MC_Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MC_Images)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MC_Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MC_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MC_Sources)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MC_Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MC_Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MC_Paths)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DEPARTMENT.Department_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MENU.Menu_Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MC_Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MC_Images)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MC_Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MC_Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MC_Sources)
+                </td>
+                <td>
+                    @Html.Raw(HttpUtility.HtmlDecode(item.MC_Content))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MC_Note)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MC_Paths)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DEPARTMENT.Department_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MENU.Menu_Name)
+                </td>
+                <td>
+                    <a href="@Url.Action("ChinhSua","QuanLyBaiDang",new { @maBD = item.MC_Id })" class="btn btn-success" role="button">Chỉnh sửa</a>
+                    <a href="@Url.Action("Xoa", "QuanLyBaiDang", new { @maBD = item.MC_Id })" class="btn btn-danger" role="button">Xóa</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

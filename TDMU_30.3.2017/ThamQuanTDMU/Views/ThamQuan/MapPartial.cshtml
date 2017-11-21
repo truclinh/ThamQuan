@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "MapPartial";
+    Layout = "~/Views/Shared/_ThamQuanLayout.cshtml";
+}
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqy-fBdWezdNvc7LP0Qs96dAVMDo7BHBU&callback=initMap">
+</script>
+<div id="map"></div>
+
+<script type="text/javascript">
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 20,
+      center: new google.maps.LatLng(10.980796, 106.675481),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+    $.ajax({
+        url: '@Url.Action("LoadMap", "ThamQuan")',
+        dataType: "json",
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        async: true,
+        processData: false,
+        cache: false,
+        success: function (data) {
+            for (i = 0; i < data.length; i++) {
+               var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(data[i].lat, data[i].lng),
+                    map: map
+                });
+               google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+                   return function () {
+                       infowindow.setContent(data[i].Img_Title);
+                       infowindow.open(map, marker);
+                   }
+               })(marker, i));
+               google.maps.event.addListener(marker, 'click', function () {
+                   var id = data[i].Img_Id;
+                   window.location.assign('../ThamQuan/ThamQuan?imgId='+data[i].Img_Id);
+               })(marker, i);
+
+
+            }
+
+        },
+        error: function (xhr) {
+            alert('error');
+        }
+    });
+</script>
+

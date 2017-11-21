@@ -1,0 +1,78 @@
+﻿@model ThamQuanTDMU.Models.STUDY_ACTIVITY
+
+@{
+    ViewBag.Title = "Chỉnh sửa";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CHỈNH SỬA</h2>
+
+@using (Html.BeginForm("ChinhSua", "QuanLyNghienCuuKhoaHoc", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.SA_Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Title, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SA_Title)
+                @Html.ValidationMessageFor(model => model.SA_Title)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Year, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SA_Year)
+                @Html.ValidationMessageFor(model => model.SA_Year)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Image, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SA_Image)
+                @Html.ValidationMessageFor(model => model.SA_Image)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Video, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SA_Video)
+                @Html.ValidationMessageFor(model => model.SA_Video)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Khoa, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SA_Khoa)
+                @Html.ValidationMessageFor(model => model.SA_Khoa)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Content, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <textarea name="SA_Content">@Model.SA_Content</textarea>
+                @Html.ValidationMessageFor(model => model.SA_Content)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input class="btnSubmit" type="submit" value="Lưu" style=" margin-top: 1%; margin-left: 25%; width: 100px; height: 50px;" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Trở về", "Index")
+</div>

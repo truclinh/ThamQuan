@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TDMU_INTRODUCTIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DEPARTMENT">
+    <Key>
+      <PropertyRef Name="Department_Id" />
+    </Key>
+    <Property Name="Department_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_Name" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="FOOTER">
+    <Key>
+      <PropertyRef Name="Footer_Id" />
+    </Key>
+    <Property Name="Footer_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Footer_Name" Type="varbinary" MaxLength="150" />
+    <Property Name="Footer_Link" Type="nvarchar" MaxLength="100" />
+    <Property Name="Footer_Images" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Name="Menu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Menu_color" Type="nvarchar" MaxLength="250" />
+    <Property Name="Menu_Link" Type="nvarchar" MaxLength="255" />
+    <Property Name="Menu_Active" Type="int" />
+    <Property Name="Menu_Note" Type="nvarchar" MaxLength="150" />
+    <Property Name="Menu_Paths" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MENU_CONTENT">
+    <Key>
+      <PropertyRef Name="MC_Id" />
+    </Key>
+    <Property Name="MC_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MC_Tile" Type="nvarchar" MaxLength="100" />
+    <Property Name="MC_Images" Type="nvarchar" MaxLength="150" />
+    <Property Name="MC_Position" Type="nvarchar" MaxLength="150" />
+    <Property Name="MC_Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="MC_Sources" Type="nvarchar" MaxLength="200" />
+    <Property Name="MC_Content" Type="ntext" />
+    <Property Name="MC_Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="MC_Paths" Type="nvarchar" MaxLength="150" />
+    <Property Name="Menu_Id" Type="int" />
+    <Property Name="Department_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="SUB_MENU_CONTENT">
+    <Key>
+      <PropertyRef Name="SMC_Id" />
+    </Key>
+    <Property Name="SMC_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SMC_Images" Type="nvarchar" MaxLength="150" />
+    <Property Name="SMC_Position" Type="nvarchar" MaxLength="150" />
+    <Property Name="MC_Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="MC_Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="MC_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_MENU_CONTENT_DEPARTMENT">
+    <End Role="DEPARTMENT" Type="Self.DEPARTMENT" Multiplicity="0..1" />
+    <End Role="MENU_CONTENT" Type="Self.MENU_CONTENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENT">
+        <PropertyRef Name="Department_Id" />
+      </Principal>
+      <Dependent Role="MENU_CONTENT">
+        <PropertyRef Name="Department_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_CONTENT_MENU">
+    <End Role="MENU" Type="Self.MENU" Multiplicity="0..1" />
+    <End Role="MENU_CONTENT" Type="Self.MENU_CONTENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENU">
+        <PropertyRef Name="Menu_Id" />
+      </Principal>
+      <Dependent Role="MENU_CONTENT">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUB_MENU_CONTENT_MENU_CONTENT">
+    <End Role="MENU_CONTENT" Type="Self.MENU_CONTENT" Multiplicity="0..1" />
+    <End Role="SUB_MENU_CONTENT" Type="Self.SUB_MENU_CONTENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENU_CONTENT">
+        <PropertyRef Name="MC_Id" />
+      </Principal>
+      <Dependent Role="SUB_MENU_CONTENT">
+        <PropertyRef Name="MC_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TDMU_INTRODUCTIONModelStoreContainer">
+    <EntitySet Name="DEPARTMENT" EntityType="Self.DEPARTMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FOOTER" EntityType="Self.FOOTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MENU" EntityType="Self.MENU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MENU_CONTENT" EntityType="Self.MENU_CONTENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUB_MENU_CONTENT" EntityType="Self.SUB_MENU_CONTENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_MENU_CONTENT_DEPARTMENT" Association="Self.FK_MENU_CONTENT_DEPARTMENT">
+      <End Role="DEPARTMENT" EntitySet="DEPARTMENT" />
+      <End Role="MENU_CONTENT" EntitySet="MENU_CONTENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_CONTENT_MENU" Association="Self.FK_MENU_CONTENT_MENU">
+      <End Role="MENU" EntitySet="MENU" />
+      <End Role="MENU_CONTENT" EntitySet="MENU_CONTENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUB_MENU_CONTENT_MENU_CONTENT" Association="Self.FK_SUB_MENU_CONTENT_MENU_CONTENT">
+      <End Role="MENU_CONTENT" EntitySet="MENU_CONTENT" />
+      <End Role="SUB_MENU_CONTENT" EntitySet="SUB_MENU_CONTENT" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

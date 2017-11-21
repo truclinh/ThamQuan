@@ -1,0 +1,111 @@
+﻿@model ThamQuanTDMU.Models.STUDY_ACTIVITY
+
+@{
+    ViewBag.Title = "Thêm mới";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>THÊM MỚI</h2>
+<script src="~/Content/assets/js/jquery-3.1.1.min.js"></script>
+
+@using (Html.BeginForm("ThemMoi", "QuanLyNghienCuuKhoaHoc", FormMethod.Post, new { @enctype = "multipart/form-data" })) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Title, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SA_Title)
+                @Html.ValidationMessageFor(model => model.SA_Title)
+            </div>
+        </div>
+
+       
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Year, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SA_Year)
+                @Html.ValidationMessageFor(model => model.SA_Year)
+            </div>
+        </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SA_Image, new { style = "text-align:left", @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="col-md-10">
+                        @*Name của thẻ input[file] phải cùng tên với tham số bên Controller*@
+                        <input id="inputImage" type="file" name="fileUpload" style=" width:150px;" /><br />
+                        <img id="imgDT" src="" style=" width:300px;height:auto" />
+                         @*Thông báo trùng*@
+                        @Html.ValidationMessageFor(model => model.SA_Image)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SA_Video, new { style = "text-align:left", @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="col-md-10">
+                        @*Name của thẻ input[file] phải cùng tên với tham số bên Controller*@
+                        <input id="inputVideo" type="file" name="fileUploadVideo" style="width:150px;" /><br />
+                        <video id="videoDT" width="200" height="350" controls="controls">
+                            <source src="" type="video/mp4" />
+                        </video>
+
+                    </div>
+                </div>
+            </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Khoa, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SA_Khoa)
+                @Html.ValidationMessageFor(model => model.SA_Khoa)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SA_Content, new { style = "text-align:left", @class = "control-label col-md-2" })
+            <br />
+            <br />
+            <br />
+            <div class="col-md-10">
+                <textarea name="SA_Content" placeholder="Nhập nội dung đề tài ..."></textarea>
+                @Html.ValidationMessageFor(model => model.SA_Content)
+                <br />
+                <br />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input class="btnSubmit" type="submit" value="Lưu" style=" margin-top: 1%; margin-left: 25%; width: 100px; height: 50px;" />
+            </div>
+        </div>
+    </div> 
+   
+}
+
+<div>
+    @Html.ActionLink("Trở về", "Index")
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#videoDT').hide();
+        $('#inputImage').change(function () {
+            $('#imgDT').attr("src", "../Content/assets/NCKH/img/" + $('#inputImage').val())
+        });
+        $('#inputVideo').change(function () {
+            $('#videoDT').show();
+            $('#videoDT').attr("src", "../Content/assets/NCKH/video/" + $('#inputVideo').val())
+        })
+
+      
+    })
+</script>

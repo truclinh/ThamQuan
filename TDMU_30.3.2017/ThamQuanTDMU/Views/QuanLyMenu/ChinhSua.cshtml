@@ -1,0 +1,60 @@
+﻿@model ThamQuanTDMU.Models.MENU
+
+@{
+    ViewBag.Title = "Chỉnh sửa";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CHỈNH SỬA MENU</h2>
+
+@using (Html.BeginForm("ChinhSua", "QuanLyMenu", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Chỉnh sửa danh mục menu</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Menu_Id)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Menu_Name, htmlAttributes: new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Menu_Name)
+                @Html.ValidationMessageFor(model => model.Menu_Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Menu_color, htmlAttributes: new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Menu_color)
+                @Html.ValidationMessageFor(model => model.Menu_color)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Menu_Link, htmlAttributes: new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Menu_Link)
+                @Html.ValidationMessageFor(model => model.Menu_Link)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Menu_Note, htmlAttributes: new { style = "text-align:left", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Menu_Note)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input class="btnSubmit" type="submit" value="Lưu" style=" margin-top: 1%; margin-left: 25%; width: 100px; height: 50px;" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Trở về", "Index")
+</div>

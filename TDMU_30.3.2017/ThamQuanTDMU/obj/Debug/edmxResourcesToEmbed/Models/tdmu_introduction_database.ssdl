@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TDMU_INTRODUCTIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="AD_Id" />
+    </Key>
+    <Property Name="AD_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AD_Birth" Type="date" />
+    <Property Name="AD_Username" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AD_Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DEPARTMENT">
+    <Key>
+      <PropertyRef Name="Department_Id" />
+    </Key>
+    <Property Name="Department_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FOOTER">
+    <Key>
+      <PropertyRef Name="Footer_Id" />
+    </Key>
+    <Property Name="Footer_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Footer_Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Footer_Link" Type="nvarchar" MaxLength="100" />
+    <Property Name="Footer_Images" Type="nvarchar" MaxLength="150" />
+    <Property Name="Footer_Content" Type="nvarchar(max)" />
+    <Property Name="FooterType_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="FOOTER_TYPE">
+    <Key>
+      <PropertyRef Name="FooterType_ID" />
+    </Key>
+    <Property Name="FooterType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Footer_Type" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Name="Menu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Menu_color" Type="nvarchar" MaxLength="250" />
+    <Property Name="Menu_Link" Type="nvarchar" MaxLength="255" />
+    <Property Name="Menu_Active" Type="int" />
+    <Property Name="Menu_Note" Type="nvarchar" MaxLength="150" />
+    <Property Name="Menu_Paths" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MENU_CONTENT">
+    <Key>
+      <PropertyRef Name="MC_Id" />
+    </Key>
+    <Property Name="MC_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MC_Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="MC_Images" Type="nvarchar" MaxLength="150" />
+    <Property Name="MC_Position" Type="nvarchar" MaxLength="150" />
+    <Property Name="MC_Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="MC_Sources" Type="nvarchar" MaxLength="200" />
+    <Property Name="MC_Content" Type="nvarchar(max)" />
+    <Property Name="MC_Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="MC_Paths" Type="nvarchar" MaxLength="150" />
+    <Property Name="Menu_Id" Type="int" Nullable="false" />
+    <Property Name="Department_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STUDY_ACTIVITY">
+    <Key>
+      <PropertyRef Name="SA_Id" />
+    </Key>
+    <Property Name="SA_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SA_Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="SA_Content" Type="nvarchar(max)" />
+    <Property Name="SA_Year" Type="nvarchar" MaxLength="100" />
+    <Property Name="SA_Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="SA_Video" Type="nvarchar" MaxLength="100" />
+    <Property Name="SA_Khoa" Type="nvarchar" MaxLength="100" />
+    <Property Name="Menu_Id" Type="int" />
+    <Property Name="SA_Type" Type="int" />
+  </EntityType>
+  <EntityType Name="STUDY_ENVIRONMENT">
+    <Key>
+      <PropertyRef Name="SE_Id" />
+    </Key>
+    <Property Name="SE_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SE_Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="SE_Content" Type="nvarchar(max)" />
+    <Property Name="SE_Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="SE_Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="Menu_Id" Type="int" />
+    <Property Name="SE_Type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SUB_MENU_CONTENT">
+    <Key>
+      <PropertyRef Name="SMC_Id" />
+    </Key>
+    <Property Name="SMC_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SMC_Images" Type="nvarchar" MaxLength="150" />
+    <Property Name="SMC_Position" Type="nvarchar" MaxLength="150" />
+    <Property Name="SMC_Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="SMC_Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="MC_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VISIT_IMAGE">
+    <Key>
+      <PropertyRef Name="Img_Id" />
+    </Key>
+    <Property Name="Img_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Img_Src" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Img_Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Img_Link" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="area" Type="varchar" MaxLength="50" />
+    <Property Name="lat" Type="float" />
+    <Property Name="lng" Type="float" />
+  </EntityType>
+  <Association Name="FK_FOOTER_FOOTER_TYPE">
+    <End Role="FOOTER_TYPE" Type="Self.FOOTER_TYPE" Multiplicity="0..1" />
+    <End Role="FOOTER" Type="Self.FOOTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FOOTER_TYPE">
+        <PropertyRef Name="FooterType_ID" />
+      </Principal>
+      <Dependent Role="FOOTER">
+        <PropertyRef Name="FooterType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_CONTENT_DEPARTMENT">
+    <End Role="DEPARTMENT" Type="Self.DEPARTMENT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MENU_CONTENT" Type="Self.MENU_CONTENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENT">
+        <PropertyRef Name="Department_Id" />
+      </Principal>
+      <Dependent Role="MENU_CONTENT">
+        <PropertyRef Name="Department_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_CONTENT_MENU">
+    <End Role="MENU" Type="Self.MENU" Multiplicity="1" />
+    <End Role="MENU_CONTENT" Type="Self.MENU_CONTENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENU">
+        <PropertyRef Name="Menu_Id" />
+      </Principal>
+      <Dependent Role="MENU_CONTENT">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STUDY_ACTIVITY_MENU">
+    <End Role="MENU" Type="Self.MENU" Multiplicity="0..1" />
+    <End Role="STUDY_ACTIVITY" Type="Self.STUDY_ACTIVITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENU">
+        <PropertyRef Name="Menu_Id" />
+      </Principal>
+      <Dependent Role="STUDY_ACTIVITY">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STUDY_ENVIRONMENT_MENU">
+    <End Role="MENU" Type="Self.MENU" Multiplicity="0..1" />
+    <End Role="STUDY_ENVIRONMENT" Type="Self.STUDY_ENVIRONMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENU">
+        <PropertyRef Name="Menu_Id" />
+      </Principal>
+      <Dependent Role="STUDY_ENVIRONMENT">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUB_MENU_CONTENT_MENU_CONTENT">
+    <End Role="MENU_CONTENT" Type="Self.MENU_CONTENT" Multiplicity="1" />
+    <End Role="SUB_MENU_CONTENT" Type="Self.SUB_MENU_CONTENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENU_CONTENT">
+        <PropertyRef Name="MC_Id" />
+      </Principal>
+      <Dependent Role="SUB_MENU_CONTENT">
+        <PropertyRef Name="MC_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TDMU_INTRODUCTIONModelStoreContainer">
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEPARTMENT" EntityType="Self.DEPARTMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FOOTER" EntityType="Self.FOOTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FOOTER_TYPE" EntityType="Self.FOOTER_TYPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MENU" EntityType="Self.MENU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MENU_CONTENT" EntityType="Self.MENU_CONTENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STUDY_ACTIVITY" EntityType="Self.STUDY_ACTIVITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STUDY_ENVIRONMENT" EntityType="Self.STUDY_ENVIRONMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUB_MENU_CONTENT" EntityType="Self.SUB_MENU_CONTENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VISIT_IMAGE" EntityType="Self.VISIT_IMAGE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_FOOTER_FOOTER_TYPE" Association="Self.FK_FOOTER_FOOTER_TYPE">
+      <End Role="FOOTER_TYPE" EntitySet="FOOTER_TYPE" />
+      <End Role="FOOTER" EntitySet="FOOTER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_CONTENT_DEPARTMENT" Association="Self.FK_MENU_CONTENT_DEPARTMENT">
+      <End Role="DEPARTMENT" EntitySet="DEPARTMENT" />
+      <End Role="MENU_CONTENT" EntitySet="MENU_CONTENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_CONTENT_MENU" Association="Self.FK_MENU_CONTENT_MENU">
+      <End Role="MENU" EntitySet="MENU" />
+      <End Role="MENU_CONTENT" EntitySet="MENU_CONTENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STUDY_ACTIVITY_MENU" Association="Self.FK_STUDY_ACTIVITY_MENU">
+      <End Role="MENU" EntitySet="MENU" />
+      <End Role="STUDY_ACTIVITY" EntitySet="STUDY_ACTIVITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STUDY_ENVIRONMENT_MENU" Association="Self.FK_STUDY_ENVIRONMENT_MENU">
+      <End Role="MENU" EntitySet="MENU" />
+      <End Role="STUDY_ENVIRONMENT" EntitySet="STUDY_ENVIRONMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUB_MENU_CONTENT_MENU_CONTENT" Association="Self.FK_SUB_MENU_CONTENT_MENU_CONTENT">
+      <End Role="MENU_CONTENT" EntitySet="MENU_CONTENT" />
+      <End Role="SUB_MENU_CONTENT" EntitySet="SUB_MENU_CONTENT" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

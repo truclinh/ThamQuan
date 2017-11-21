@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7b1e786653f04ff6997ec53f520af825" Name="Diagram1">
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.ADMIN" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.DEPARTMENT" Width="1.5" PointX="3.75" PointY="6.875" />
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.FOOTER" Width="1.5" PointX="8" PointY="1" />
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.FOOTER_TYPE" Width="1.5" PointX="5.75" PointY="1.375" />
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.MENU" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.MENU_CONTENT" Width="1.5" PointX="6" PointY="4.875" />
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.STUDY_ACTIVITY" Width="1.5" PointX="3" PointY="11.375" />
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.STUDY_ENVIRONMENT" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.SUB_MENU_CONTENT" Width="1.5" PointX="8.25" PointY="5.5" />
+        <AssociationConnector Association="TDMU_INTRODUCTIONModel.FK_MENU_CONTENT_DEPARTMENT" />
+        <AssociationConnector Association="TDMU_INTRODUCTIONModel.FK_FOOTER_FOOTER_TYPE" />
+        <AssociationConnector Association="TDMU_INTRODUCTIONModel.FK_MENU_CONTENT_MENU" />
+        <AssociationConnector Association="TDMU_INTRODUCTIONModel.FK_STUDY_ACTIVITY_MENU" />
+        <AssociationConnector Association="TDMU_INTRODUCTIONModel.FK_STUDY_ENVIRONMENT_MENU" />
+        <AssociationConnector Association="TDMU_INTRODUCTIONModel.FK_SUB_MENU_CONTENT_MENU_CONTENT" />
+        <EntityTypeShape EntityType="TDMU_INTRODUCTIONModel.VISIT_IMAGE" Width="1.5" PointX="8.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
